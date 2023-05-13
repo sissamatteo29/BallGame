@@ -28,15 +28,15 @@ public class BallMain extends Application {
 
         Button addBtn = new Button("Add");
         addBtn.setLayoutX(80);
-        addBtn.setLayoutY(400);
+        addBtn.setLayoutY(650);
 
         Button startBtn = new Button("Start");
-        startBtn.setLayoutX(130);
-        startBtn.setLayoutY(400);
+        startBtn.setLayoutX(160);
+        startBtn.setLayoutY(650);
 
         Button stopBtn = new Button("Stop");
-        stopBtn.setLayoutX(180);
-        stopBtn.setLayoutY(400);
+        stopBtn.setLayoutX(240);
+        stopBtn.setLayoutY(650);
 
         Line line = new Line(0,600,800,600);
 
@@ -52,7 +52,7 @@ public class BallMain extends Application {
         startBtn.setOnAction(e -> startThreads());
         stopBtn.setOnAction(e -> stopThreads());
 
-        Scene scene = new Scene(pane, 300, 500);
+        Scene scene = new Scene(pane, 250, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -158,23 +158,23 @@ class CircleThread extends Thread {
 
         do {
             side = rnd.nextInt(4);
-        } while ( (side == 0 && x == r) || (side == 1 && y == 300-r) || (side == 2 && x == 500-r) || (side == 3 && y == r));
+        } while ( (side == 0 && x == r) || (side == 1 && y == 250-r) || (side == 2 && x == 700-r) || (side == 3 && y == r));
 
         switch (side) {
             case 0:
                 goodP.x = r;
-                goodP.y = rnd.nextInt(300-2*r);
+                goodP.y = rnd.nextInt(250-2*r);
                 break;
             case 1:
-                goodP.x = rnd.nextInt(500-2*r);
-                goodP.y = 300-r;
+                goodP.x = rnd.nextInt(700-2*r);
+                goodP.y = 250-r;
                 break;
             case 2:
-                goodP.x = 500-r;
-                goodP.y = rnd.nextInt(300-2*r);
+                goodP.x = 700-r;
+                goodP.y = rnd.nextInt(250-2*r);
                 break;
             case 3:
-                goodP.x = rnd.nextInt(500-2*r);
+                goodP.x = rnd.nextInt(700-2*r);
                 goodP.y = r;
                 break;
         }
