@@ -2,9 +2,11 @@ package com.ballgame;
 
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -25,16 +27,16 @@ public class BallMain extends Application {
         primaryStage.setTitle("Game");
 
         Button addBtn = new Button("Add");
-        addBtn.setLayoutX(320);
-        addBtn.setLayoutY(650);
+        addBtn.setLayoutX(80);
+        addBtn.setLayoutY(400);
 
         Button startBtn = new Button("Start");
-        startBtn.setLayoutX(260);
-        startBtn.setLayoutY(650);
+        startBtn.setLayoutX(130);
+        startBtn.setLayoutY(400);
 
         Button stopBtn = new Button("Stop");
-        stopBtn.setLayoutX(380);
-        stopBtn.setLayoutY(650);
+        stopBtn.setLayoutX(180);
+        stopBtn.setLayoutY(400);
 
         Line line = new Line(0,600,800,600);
 
@@ -50,9 +52,10 @@ public class BallMain extends Application {
         startBtn.setOnAction(e -> startThreads());
         stopBtn.setOnAction(e -> stopThreads());
 
-        Scene scene = new Scene(pane, 800 , 700);
+        Scene scene = new Scene(pane, 300, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
+
 
     }
 
@@ -155,23 +158,23 @@ class CircleThread extends Thread {
 
         do {
             side = rnd.nextInt(4);
-        } while ( (side == 0 && x == r) || (side == 1 && y == 600-r) || (side == 2 && x == 800-r) || (side == 3 && y == r));
+        } while ( (side == 0 && x == r) || (side == 1 && y == 300-r) || (side == 2 && x == 500-r) || (side == 3 && y == r));
 
         switch (side) {
             case 0:
                 goodP.x = r;
-                goodP.y = rnd.nextInt(600-2*r);
+                goodP.y = rnd.nextInt(300-2*r);
                 break;
             case 1:
-                goodP.x = rnd.nextInt(800-2*r);
-                goodP.y = 600-r;
+                goodP.x = rnd.nextInt(500-2*r);
+                goodP.y = 300-r;
                 break;
             case 2:
-                goodP.x = 800-r;
-                goodP.y = rnd.nextInt(600-2*r);
+                goodP.x = 500-r;
+                goodP.y = rnd.nextInt(300-2*r);
                 break;
             case 3:
-                goodP.x = rnd.nextInt(800-2*r);
+                goodP.x = rnd.nextInt(500-2*r);
                 goodP.y = r;
                 break;
         }
