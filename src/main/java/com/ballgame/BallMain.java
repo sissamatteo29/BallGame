@@ -158,23 +158,23 @@ class CircleThread extends Thread {
 
         do {
             side = rnd.nextInt(4);
-        } while ( (side == 0 && x == r) || (side == 1 && y == 250-r) || (side == 2 && x == 700-r) || (side == 3 && y == r));
+        } while ( (side == 0 && x == r) || (side == 1 && y == 700-r) || (side == 2 && x == 300-r) || (side == 3 && y == r));
 
         switch (side) {
             case 0:
                 goodP.x = r;
-                goodP.y = rnd.nextInt(250-2*r);
+                goodP.y = rnd.nextInt(700-2*r);
                 break;
             case 1:
-                goodP.x = rnd.nextInt(700-2*r);
-                goodP.y = 250-r;
+                goodP.x = rnd.nextInt(300-2*r);
+                goodP.y = 700-r;
                 break;
             case 2:
-                goodP.x = 700-r;
-                goodP.y = rnd.nextInt(250-2*r);
+                goodP.x = 300-r;
+                goodP.y = rnd.nextInt(700-2*r);
                 break;
             case 3:
-                goodP.x = rnd.nextInt(700-2*r);
+                goodP.x = rnd.nextInt(300-2*r);
                 goodP.y = r;
                 break;
         }
